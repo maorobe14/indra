@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "55cc5cee-38af-4407-abc2-24d70d9cb001",
+		"name": "carrito de compras",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14185332",
+		"_collection_link": "https://claroquesisepuede.postman.co/workspace/myworkspacesamtel~b6495ba4-4e4c-4dff-9b95-b94a1ce09ee8/collection/14185332-55cc5cee-38af-4407-abc2-24d70d9cb001?action=share&source=collection_link&creator=14185332"
+	},
+	"item": [
+		{
+			"name": "carrito",
+			"item": [
+				{
+					"name": "crear carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"productos\": [],\r\n  \"total\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "agregar producto al carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/1/producto/1?cantidad=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"1",
+								"producto",
+								"1"
+							],
+							"query": [
+								{
+									"key": "cantidad",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ver carrito",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ver carrito y aplicar cupon",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/1?codigoCupon=c3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"1"
+							],
+							"query": [
+								{
+									"key": "codigoCupon",
+									"value": "c3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar producto del carrito",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/1/producto/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"1",
+								"producto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar cantidad del producto en el carrito",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carrito/1/producto/1?cantidad=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carrito",
+								"1",
+								"producto",
+								"1"
+							],
+							"query": [
+								{
+									"key": "cantidad",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "producto",
+			"item": [
+				{
+					"name": "crear producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"producto10\",\r\n    \"precio\": 2520\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/producto/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"producto",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cupon",
+			"item": [
+				{
+					"name": "crear cupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\" : \"c4\",\r\n    \"descuento\" : 1000,\r\n    \"fechaVigenciaInicio\" : \"2024-10-10\",\r\n    \"fechaVigenciaFin\" : \"2024-11-12\",\r\n    \"utilizado\" : false \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cupon/crear",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cupon",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

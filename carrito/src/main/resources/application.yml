@@ -1,0 +1,28 @@
+spring:
+  application:
+      name: carrito
+
+  datasource:
+      url: jdbc:postgresql://localhost:5432/gestion
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+  jpa:
+      hibernate:
+        ddl-auto: update  # Opciones: none, validate, update, create, create-drop
+      show-sql: true  # Muestra las consultas SQL generadas en la consola
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
+  packagesToScan: com.indra.carrito.controller
+
+
+#swagger-ui: http://localhost:8080/doc/swagger-ui/index.html
+#swagger-ui: http://localhost:8080/doc/swagger-ui.html
+#api-docs: http://localhost:8080/v3/api-docs
+
+
